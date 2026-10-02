@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jurnal Modul 2 - HTML 1</title>
+</head>
+
+<body>
+
+    <!-- ===================================== -->
+    <!-- 1. TABEL DATA PRAKTIKAN -->
+    <!-- ===================================== -->
+
+    <h2>DATA PRAKTIKAN WEBPRO</h2>
+
+    <table border="1" width="80%" cellpadding="8" cellspacing="0">
+
+        <tr>
+            <th rowspan="2">No</th>
+            <th rowspan="2">NIM</th>
+            <th rowspan="2">Nama</th>
+            <th colspan="2">Kontak</th>
+        </tr>
+
+        <tr>
+            <th>No. Telepon</th>
+            <th>Email</th>
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td>103092400076</td>
+            <td>Putu Ananta Bogi Putra Wisuda</td>
+            <td>081525984590</td>
+            <td>putu.ananta@gmail.com</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>103092400067</td>
+            <td>Nabil Zainnudin</td>
+            <td>081234567891</td>
+            <td>nabil.zainnudin@gmail.com</td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>103092400077</td>
+            <td>Alsyan Bayu Pratama</td>
+            <td>082145673458</td>
+            <td>alsyan.bayugmail.com</td>
+        </tr>
+
+    </table>
+
+
+    <br><br>
+
+
+    <!-- ===================================== -->
+    <!-- 2. TABEL WARNA BIRU DAN HIJAU -->
+    <!-- ===================================== -->
+
+    <h2>TABEL WARNA</h2>
+
+    <table border="1" width="500" height="200"
+           cellspacing="0"
+           bordercolor="white">
+
+        <tr>
+            <td bgcolor="blue" colspan="2"></td>
+            <td bgcolor="green" rowspan="2"></td>
+        </tr>
+
+        <tr>
+            <td bgcolor="green"></td>
+            <td bgcolor="blue"></td>
+        </tr>
+
+        <tr>
+            <td bgcolor="blue" colspan="3"></td>
+        </tr>
+
+    </table>
+
+
+    <br><br>
+
+
+    <!-- ===================================== -->
+    <!-- 3. FORM DATA MAHASISWA -->
+    <!-- ===================================== -->
+
+    <h2>FORM DATA MAHASISWA</h2>
+
+    <form onsubmit="return cekHobi()">
+
+        <!-- NIM -->
+        <label for="nim">NIM:</label>
+        <input type="text"
+               id="nim"
+               name="nim"
+               required>
+
+        <br><br>
+
+
+        <!-- NAMA -->
+        <label for="nama">Nama:</label>
+        <input type="text"
+               id="nama"
+               name="nama"
+               required>
+
+        <br><br>
+
+
+        <!-- TANGGAL LAHIR -->
+        <label for="tanggal_lahir">Tanggal Lahir:</label>
+        <input type="date"
+               id="tanggal_lahir"
+               name="tanggal_lahir"
+               required>
+
+        <br><br>
+
+
+        <!-- JENIS KELAMIN -->
+        <label>Jenis Kelamin:</label>
+
+        <input type="radio"
+               id="laki"
+               name="jenis_kelamin"
+               value="Laki-Laki"
+               required>
+
+        <label for="laki">Laki-Laki</label>
+
+
+        <input type="radio"
+               id="perempuan"
+               name="jenis_kelamin"
+               value="Perempuan">
+
+        <label for="perempuan">Perempuan</label>
+
+        <br><br>
+
+
+        <!-- ALAMAT -->
+        <label for="alamat">Alamat di Bandung:</label>
+
+        <br>
+
+        <textarea id="alamat"
+                  name="alamat"
+                  rows="5"
+                  cols="40"></textarea>
+
+        <br><br>
+
+
+        <!-- TEMPAT TINGGAL -->
+        <label for="tempat_tinggal">Tinggal di:</label>
+
+        <select id="tempat_tinggal"
+                name="tempat_tinggal"
+                required>
+
+            <option value="">--pilih--</option>
+
+            <option value="Kos/Kontrakan">
+                Kos/Kontrakan
+            </option>
+
+            <option value="Rumah saudara">
+                Rumah saudara
+            </option>
+
+            <option value="Rumah orang tua">
+                Rumah orang tua
+            </option>
+
+        </select>
+
+        <br><br>
+
+
+        <!-- HOBI -->
+        <label>Hobi:</label>
+
+        <br>
+
+        <input type="checkbox"
+               id="science"
+               name="hobi"
+               value="Science">
+
+        <label for="science">Science</label>
+
+
+        <input type="checkbox"
+               id="technology"
+               name="hobi"
+               value="Technology">
+
+        <label for="technology">Technology</label>
+
+
+        <input type="checkbox"
+               id="art"
+               name="hobi"
+               value="Art">
+
+        <label for="art">Art</label>
+
+
+        <input type="checkbox"
+               id="sport"
+               name="hobi"
+               value="Sport">
+
+        <label for="sport">Sport</label>
+
+        <br><br>
+
+
+        <!-- TOMBOL -->
+        <input type="submit" value="Submit">
+
+        <input type="reset" value="Reset">
+
+    </form>
+
+
+    <!-- ===================================== -->
+    <!-- JAVASCRIPT UNTUK VALIDASI HOBI -->
+    <!-- ===================================== -->
+
+    <script>
+
+        function cekHobi() {
+
+            let hobi = document.querySelectorAll(
+                'input[name="hobi"]:checked'
+            );
+
+            if (hobi.length != 2) {
+
+                alert("Silakan pilih tepat 2 hobi.");
+
+                return false;
+            }
+
+            return true;
+        }
+
+    </script>
+
+</body>
+</html>
